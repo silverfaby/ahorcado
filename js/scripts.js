@@ -55,15 +55,42 @@ function ingresarLetra(){
     default:
       alert("error");
       vidas--;
-      if(vidas>0){
-        document.getElementById("vidas").innerHTML = "Vidas: " + (vidas);
-      }else {
-        alert("perdiste");
-        location.reload(true);
-      }
+      checkearVida();
       break;
   }
   actualizarPalabra();
+}
+
+function checkearVida(){
+  
+  document.getElementById("vidas").innerHTML = "Vidas: " + (vidas);
+  switch (vidas) {
+    case 7:
+      document.getElementById("imagenAhorcado").src = "img/intento1.png";
+      break;
+    case 6:
+      document.getElementById("imagenAhorcado").src = "img/intento2.png";
+      break;
+    case 5:
+      document.getElementById("imagenAhorcado").src = "img/intento3.png";
+      break;
+    case 4:
+      document.getElementById("imagenAhorcado").src = "img/intento4.png";
+      break;
+    case 3:
+      document.getElementById("imagenAhorcado").src = "img/intento5.png";
+      break;
+    case 2:
+      document.getElementById("imagenAhorcado").src = "img/intento6.png";
+      break;
+    case 1:
+      document.getElementById("imagenAhorcado").src = "img/intento7.png";
+      break;
+    case 0:
+      alert("perdiste");
+      location.reload(true);
+      break;
+  }
 }
 
 function actualizarPalabra(){
